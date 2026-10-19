@@ -1,0 +1,6 @@
+{
+  "name": "Hearth & Home - Storefront",
+  "description": "Artisanal e-commerce storefront for home decor, spiritual essentials, and gifts with customizable store designer, WhatsApp ordering, and catalog management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

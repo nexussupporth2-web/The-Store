@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #173f35;
+  --accent: #e8a317;
+  --bg: #f5f8f6;
+  --surface: #ffffff;
+  --text: #18231f;
+  --muted: #5d6b66;
+  --line: #dde5e0;
+  --on-brand: #ffffff;
+  --display: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif;
+  --body: 'Figtree', 'Segoe UI', system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1815;
+    --surface: #16231f;
+    --text: #e8f0ec;
+    --muted: #9bb0a8;
+    --line: #263631;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0e1815;
+  --surface: #16231f;
+  --text: #e8f0ec;
+  --muted: #9bb0a8;
+  --line: #263631;
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f8f6;
+  --surface: #ffffff;
+  --text: #18231f;
+  --muted: #5d6b66;
+  --line: #dde5e0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--display);
+}
+
+/* Custom scrollbars for clean slide-over drawers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-card-entrance {
+  animation: cardEntrance 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

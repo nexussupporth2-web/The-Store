@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "StoreConfig": {
+      "title": "StoreConfig",
+      "description": "Configuration and product catalog for the storefront",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "tagline": { "type": "string", "maxLength": 300 },
+        "heroTitle": { "type": "string", "maxLength": 200 },
+        "logo": { "type": "string" },
+        "brand": { "type": "string", "maxLength": 20 },
+        "accent": { "type": "string", "maxLength": 20 },
+        "currency": { "type": "string", "maxLength": 10 },
+        "whatsapp": { "type": "string", "maxLength": 30 },
+        "email": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "address": { "type": "string", "maxLength": 200 },
+        "hours": { "type": "string", "maxLength": 100 },
+        "poweredBy": { "type": "string", "maxLength": 100 },
+        "pwHash": { "type": "string", "maxLength": 128 },
+        "freeAbove": { "type": "number" },
+        "shipFee": { "type": "number" }
+      },
+      "required": ["name", "brand", "accent", "currency"]
+    }
+  },
+  "firestore": {
+    "/stores/main": {
+      "schema": { "$ref": "#/entities/StoreConfig" },
+      "description": "Main store configuration document"
+    }
+  }
+}
